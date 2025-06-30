@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd ai-recipe-generator
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: ai-recipe-generator/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - ai-recipe-generator/node_modules/**/*
